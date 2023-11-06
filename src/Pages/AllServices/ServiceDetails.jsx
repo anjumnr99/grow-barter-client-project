@@ -1,10 +1,29 @@
+import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 
 const ServiceDetails = () => {
     const service = useLoaderData();
-    console.log(service);
-    const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Description, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
+    const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
+
+    const handlePurchase = (e) => {
+        e.preventDefault();
+        console.log('Booked the service');
+        const booking_date = e.target.date.value;
+        const address = e.target.address.value;
+        const user_email = e.target.email.value;
+        const service_status = "Pending";
+        
+        
+        const bookedService = {Service_Name,Service_Image,Service_Provider_Email,Service_Price,booking_date,address,service_status,user_email };
+
+        axios.post('http://localhost:5000/bookings',bookedService)
+        .then(res=>{
+            console.log(res.data);
+        })
+
+    }
+
     return (
         <div>
             <div>
@@ -58,9 +77,6 @@ const ServiceDetails = () => {
                                             Book Now
                                         </button>
 
-                                        {/* <button type="button" className ="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" data-hs-overlay="#hs-vertically-centered-scrollable-modal">
-                                            Vertically centered scrollable modal
-                                        </button> */}
                                         {/* Modal */}
                                         <div id="hs-vertically-centered-scrollable-modal" className="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
                                             <div className="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center">
@@ -77,60 +93,65 @@ const ServiceDetails = () => {
                                                         </button>
                                                     </div>
                                                     <div className="w-full bg-green-100 px-4 overflow-y-auto">
-                                                         <img className="w-full mt-4 h-48 " src={Service_Image} alt="" />
+                                                        <img className="w-full mt-4 h-48 " src={Service_Image} alt="" />
                                                         <section className="p-6 border dark:dark:bg-gray-800 w-full dark:dark:text-gray-50">
-                                                            <form  action="" className="container flex flex-col w-full mx-auto space-y-12">
+                                                            <form onSubmit={handlePurchase} className="container flex flex-col w-full mx-auto space-y-12">
                                                                 <fieldset className="grid gap-6 rounded-md shadow-sm dark:dark:bg-gray-900">
-                                                                    
+
                                                                     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                                                                         <div className="col-span-full ">
                                                                             <label className="text-sm">Service name</label>
-                                                                            <input id="firstname" type="text"readOnly defaultValue={Service_Name} className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <input id="firstname" type="text" readOnly defaultValue={Service_Name} className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
-                                                                   
+
                                                                         <div className="col-span-full ">
-                                                                            <label htmlFor="email" className="text-sm">Service Provider Email</label>
-                                                                            <input id="email" type="email" 
-                                                                            defaultValue={Service_Provider_Email}
-                                                                            readOnly
-                                                                            className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <label htmlFor="providerEmail" className="text-sm">Service Provider Email</label>
+                                                                            <input id="providerEmail" type="email"
+                                                                                defaultValue={Service_Provider_Email}
+                                                                                readOnly
+                                                                                className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
-                                                                   
+
                                                                         <div className="col-span-full ">
-                                                                            <label htmlFor="email" className="text-sm">User Email</label>
-                                                                            <input id="email" type="email" placeholder="Enter your email" className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <label htmlFor="userEmail" className="text-sm">User Email</label>
+
+                                                                            <input type="email" name="email" id="email" placeholder="enter your email" className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+
+                                                                            {/* <input id="email"
+                                                                            type="email" name="email" 
+                                                                            placeholder="Enter your email" className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" /> */}
                                                                         </div>
 
                                                                         <div className="col-span-full sm:col-span-3">
                                                                             <label htmlFor="city" className="text-sm">Service Taking Date</label>
-                                                                            <input type="date" name="" className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" id="date" />
+                                                                            <input id="date"  type="date" name="date"  className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
                                                                         <div className="col-span-full sm:col-span-3">
                                                                             <label htmlFor="state" className="text-sm">Price</label>
                                                                             <input id="state" type="text" readOnly
-                                                                            defaultValue={Service_Price} className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                                defaultValue={Service_Price} className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
                                                                         <div className="col-span-full">
                                                                             <label htmlFor="address" className="text-sm">Address</label>
-                                                                            <input id="address" type="text" placeholder="" className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <input name="address" id="address" type="text" placeholder="Enter your address" 
+                                                                            className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
-                                                                       
-                                                                       
+
+
                                                                     </div>
                                                                 </fieldset>
-                                                               
+                                                                <div className="flex justify-center items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
+
+                                                                    <button type="submit" className="py-3 w-full px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-lg dark:focus:ring-offset-gray-800" href="#">
+                                                                        Purchase this Service
+                                                                    </button>
+
+                                                                </div>
                                                             </form>
                                                         </section>
 
                                                     </div>
-                                                    <div className="flex justify-center items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
-                                                        {/* <button type="button" className="hs-dropdown-toggle py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-overlay="#hs-vertically-centered-scrollable-modal">
-                                                            Close
-                                                        </button> */}
-                                                        <button className="py-3 w-full px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-lg dark:focus:ring-offset-gray-800" href="#">
-                                                        Purchase this Service
-                                                        </button>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
