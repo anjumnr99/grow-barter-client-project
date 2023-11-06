@@ -1,0 +1,112 @@
+[
+    {
+      "Service_Image": "https://i.ibb.co/PWpbQGq/Produce-Swap.jpg",
+      "Service Name": "Produce Swap",
+      "Service_Description": "Join our vibrant local community of growers in sharing the bounty of your garden. Swap your homegrown fruits, vegetables, and herbs with neighbors and fellow gardening enthusiasts. This exchange not only reduces food waste but also fosters a sense of camaraderie among green thumbs in your area. Enjoy the fresh, seasonal produce that your neighbors cultivate, and contribute your own harvest to the mix.",
+      "Service_Provider_Image": "https://i.ibb.co/rkm8fCb/Middle-aged-cheerful-dark-skinned-male-with-shining-smile.jpg",
+      "Service_Provider_Name": " Emma Organic Grower",
+      "Service_Provider_Email": "emmaorgainc@gmail.com",
+      "Service_Provider_Description": "Emma is a passionate organic grower who offers a variety of homegrown fruits and vegetables for the produce swap. With a commitment to sustainability, she helps the community exchange fresh, locally grown produce.",
+      "Service_Price": "200",
+      "Service_Area": "Local Community", 
+    },
+    {
+      "Service_Image": "https://i.ibb.co/j9N2KK3/Jam-Exchange.jpg",
+          "Service Name": "Homemade Preserves and Jams Exchange",
+      "Service_Description": "Delight in the homemade goodness of preserves, jams, and canned goods made by local culinary artisans. Share your unique flavors and secret family recipes, or discover the sweet and savory creations of your neighbors. Join this exchange to savor the essence of your community's culinary diversity. You can swap your homemade goodies or contribute a small fee to support local culinary talent.",
+      "Service_Provider_Image": "https://i.ibb.co/rkm8fCb/Middle-aged-cheerful-dark-skinned-male-with-shining-smile.jpg",
+      "Service_Provider_Name": "Emma Organic Grower",
+      "Service_Provider_Email": "emmaorgainc@gmail.com",
+      "Service_Provider_Description": "Emma specializes in crafting delicious homemade jams and preserves. She loves sharing her fruity creations and promoting the joy of homemade spreads within the community.",
+      "Service_Price": "360",
+      "Service_Area": "Neighborhood"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/qF7m1d5/Honey-Exchange.jpg",
+      "Service Name": "Honey Exchange",
+      "Service_Description": "Explore the nectar of your community with our Honey Exchange service. Connect with local beekeepers who produce honey from the blossoms of your region. You'll not only enjoy the distinct flavors of locally sourced honey but also support the crucial work of our buzzing friends. The pricing is variable, depending on the harvest, so you can indulge in the sweet taste of your area's natural beauty.",
+      "Service_Provider_Image": "https://i.ibb.co/rkm8fCb/Middle-aged-cheerful-dark-skinned-male-with-shining-smile.jpg",
+      "Service_Provider_Name": "Emma Organic Grower",
+      "Service_Provider_Email": "emmaorgainc@gmail.com",
+      "Service_Provider_Description": "Emma is a dedicated beekeeper who provides the community with his local honey. His passion lies in producing high-quality honey that captures the unique flavors of the region.",
+      "Service_Price": "290",
+      "Service_Area": "Within 10 miles"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/S0vd6zb/Herb-and-Spice-Sharing.jpg",
+      "Service Name": "Herb and Spice Sharing",
+      "Service_Description": "Enhance your culinary creations with fresh herbs, spices, and seasoning blends from your local neighborhood. Share your garden's aromatic treasures and experiment with flavors unique to your area. This exchange enriches your dishes and builds stronger connections among food enthusiasts. You can either swap herbs or spices or contribute a small fee to embrace the rich culinary heritage of your community.",
+      "Service_Provider_Image": "https://i.ibb.co/y6jmstC/Horizontal-shot-satisfied-college-student-uses-new-cool-app-cell-phone-carries-notepad-writing-notes.jpg",
+      "Service_Provider_Name": "Olivia Gardener",
+      "Service_Provider_Email": "oliviagardener@gmail.com",
+      "Service_Provider_Description": "Olivia is a skilled gardener who shares fresh herbs, spices, and seasoning blends with cooking enthusiasts. She's all about enhancing culinary experiences with garden-fresh flavors.",
+      "Service_Price": "190",
+      "Service_Area": "Local Community"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/C7GCxPm/Homegrown-Produce-Exchange.jpg",
+      "Service Name": "Community Garden Plots",
+      "Service_Description": "Cultivate a sense of togetherness in our Community Garden Plots. Collaborate with your neighbors to tend to shared garden spaces, growing fresh produce and learning from one another. With an annual fee, you can access a plot, sow your seeds, and reap the benefits of community gardening. Enjoy the thrill of seeing your efforts bloom alongside your friends and neighbors.",
+     "Service_Provider_Image": "https://i.ibb.co/y6jmstC/Horizontal-shot-satisfied-college-student-uses-new-cool-app-cell-phone-carries-notepad-writing-notes.jpg",
+      "Service_Provider_Name": "Olivia Gardener",
+      "Service_Provider_Email": "oliviagardener@gmail.com",
+      "Service_Provider_Description": "Olivia offers shared garden plots, allowing users to collaborate on cultivating produce in a communal space. They promote a sense of community and sustainable gardening",
+      "Service_Price": "438",
+      "Service_Area": "Local Community Garden"
+    },
+  {
+      "Service_Image": "https://i.ibb.co/S3CMd97/Homemade-Crafts-and-Goods.jpg",
+      "Service Name": "Homemade Crafts and Goods",
+      "Service_Description": "In addition to produce, allow users to exchange homemade crafts, such as soap, candles, or knitted items. Unleash your creative spirit and share your homemade crafts with those who appreciate unique, handcrafted items. Discover the artistic talents within your community and connect through the exchange of crafted goods.",
+      "Service_Provider_Image": "https://i.ibb.co/ynm3cKt/Photo-attractive-bearded-young-man-with-cherful-expression-makes-okay-gesture-with-both-hands-likes.jpg",
+      "Service_Provider_Name": "Crafty Creations Collective",
+      "Service_Provider_Email": "craftycreations@example.com",
+      "Service_Provider_Description": "Crafty Creations Collective brings together artisans who create homemade crafts, including soap, candles, and knitted items. They foster creativity and craftsmanship within the community.",
+      "Service_Price": "190",
+      "Service_Area": "Within 5 miles"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/FV3PFm8/Egg-Exchange.jpg",
+      "Service Name": "Egg Exchange",
+      "Service_Description": "Connect backyard chicken keepers with users looking for fresh eggs. Enjoy the superior taste of free-range eggs sourced from local backyard chickens. Join the Egg Exchange to share the goodness of your coop or acquire fresh eggs from your neighbors. You can swap eggs or contribute a small fee to support your local egg enthusiasts.",
+      "Service_Provider_Image": "https://i.ibb.co/60yV9qK/Headshot-beautiful-dark-skinned-curly-has-pleased-expression-rejoices-success-enjoys-spare-time-wear.jpg",
+     "Service_Provider_Name": "Backyard Eggs ",
+      "Service_Provider_Email": "backyardeggs@example.com",
+      "Service_Provider_Description": "Backyard Eggs Co. connects backyard chicken keepers with those seeking fresh eggs. They're all about supporting local egg producers and ensuring access to farm-fresh eggs.",
+      "Service_Price": "200",
+      "Service_Area": "Within 15 miles"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/ySWVVBq/Seed-Exchange.jpg",
+      "Service Name": "Seed Exchange",
+      "Service_Description": "Gardeners can exchange seeds for different plant varieties, allowing users to diversify their gardens. Explore the world of seeds and plant varieties by connecting with local gardeners. Trade seeds for various flowers, vegetables, and herbs unique to your region. The Seed Exchange is free, encouraging diverse and vibrant gardens.",
+      "Service_Provider_Image": "https://i.ibb.co/hDNb1rk/client2.jpg",
+      "Service_Provider_Name": "Green Thumb Gardeners",
+      "Service_Provider_Email": "greenthumb@example.com",
+      "Service_Provider_Description": "Green Thumb Gardeners facilitates the exchange of seeds for different plant varieties. They encourage users to diversify their gardens and promote sustainable gardening practices.",
+      "Service_Price": "200",
+      "Service_Area": "Neighborhood"
+    },
+    {
+      "Service_Image": "https://i.ibb.co/Fsr2mdC/Local-Food-and-Product-Swaps.jpg",
+      "Service Name": "Local Food and Product Swaps",
+      "Service_Description": "Organize events where users can swap not just produce but also homemade and locally sourced products like bread, cheese, and crafts. Join community gatherings that promote sustainability and encourage the exchange of unique and authentic items. Pricing varies depending on the specific items you're interested in swapping. Embrace the spirit of community exchange.",
+      "Service_Provider_Image": "https://i.ibb.co/hDNb1rk/client2.jpg",
+      "Service_Provider_Name": "Green Thumb Gardeners",
+      "Service_Provider_Email": "greenthumb@example.com",
+      "Service_Provider_Description": "Green Thumb Gardeners organizes events where users can exchange not only produce but also homemade and locally sourced products like bread, cheese, and crafts. They foster a sense of community and sustainability.",
+      "Service_Price": "300",
+      "Service_Area": "Community Events"
+    },
+   {
+      "Service_Image": "https://i.ibb.co/F8PrZ6m/Artisan-Bread-Exchange.jpg",
+      "Service Name": "Artisan Bread Exchange",
+      "Service_Description": "Indulge in the world of homemade artisan bread with our Artisan Bread Exchange service. Connect with local bakers who craft unique and flavorful bread. Swap your bread creations with fellow enthusiasts or contribute a small fee to savor the delightful tastes of your community's artisanal bakers. Join us to experience the warmth of freshly baked bread.",
+      "Service_Provider_Image": "https://i.ibb.co/Pgqjpk3/client1.jpg",
+      "Service_Provider_Name": "Artisan Breads by Daniel",
+      "Service_Provider_Email": "artisanbreads@example.com",
+      "Service_Provider_Description": " Daniel is an artisanal bread maker who shares a variety of handmade bread. He believes in the magic of freshly baked bread and connects with fellow bread enthusiasts to exchange and enjoy the craftsmanship of local bakers.",
+      "Service_Price": "170",
+      "Service_Area": "Neighborhood"
+    }
+  ]

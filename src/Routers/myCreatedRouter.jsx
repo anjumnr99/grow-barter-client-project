@@ -6,6 +6,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import AddServices from "../Pages/AddServices/AddServices";
 import MySchedules from "../Pages/MySchedules/MySchedules";
 import ManageServices from "../Pages/ManageServices/ManageServices";
+import AllServices from "../Pages/AllServices/AllServices";
 
 
 const myCreatedRouter = createBrowserRouter([
@@ -36,6 +37,10 @@ const myCreatedRouter = createBrowserRouter([
             {
                 path:'/my-schedules',
                 element:<MySchedules></MySchedules>
+            },
+            {
+                path:'/all-services',
+                element:<AllServices></AllServices>
             },
 
         ]

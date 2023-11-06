@@ -1,111 +1,188 @@
+import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { Link, NavLink } from 'react-router-dom';
-
 const Navbar = () => {
-
-    const navLinks = <>
-        <li className=" px-4 py-2 text-xl text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-            <NavLink
-                to="/"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                }
-            >
-                Home
-            </NavLink>
-        </li>
-        <li className=" px-4 py-2 text-xl text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-            <NavLink
-                to="/services"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                }
-            >
-                Services
-            </NavLink>
-        </li>
-        <li className=" px-4 py-2 text-xl text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-            <NavLink
-                to="/dashboard"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                }
-            >
-                Dashboard
-            </NavLink>
-        </li>
-    </>
     return (
+        <div className="bg-transparent px-4 py-3">
+            <div className="navbar ">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <label tabIndex={0} className=" lg:hidden text-2xl h-5 w-5">
+                            <GiHamburgerMenu></GiHamburgerMenu>
 
+                        </label>
+                        <ul tabIndex={0} className="menu dropdown-content bg z-[1]  p-2 shadow bg-base-100 rounded-box min-w-max">
+                            <li className="text-md border-none font-semibold text-slate-600">
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <li className="text-md  font-semibold text-slate-600">Dashboard</li>
+                                <ul className="  bg-transparent">
 
-        <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <Link  className="flex items-center">
-                    {/* <img  className="h-8 mr-3"  /> */}
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> Grow Barter</span>
-                </Link>
-                <div className="flex items-center justify-center gap-2 md:order-2">
-
-                    <div className="dropdown dropdown-bottom dropdown-end">
-                        <button data-collapse-toggle="navbar-user" type="button" className="inline-flex items-center p-2 w-10 lg:w-16 h-10 lg:h-16 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            <div  className="text-3xl  lg:text-4xl" aria-hidden="true">
-                                  <GiHamburgerMenu></GiHamburgerMenu>
-                            </div>
-                          
-
-                        </button>
-                        <div className='dropdown-content '>
-                            <ul tabIndex={0} className=" dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-fit ">
-                                {navLinks}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col lg:flex-row justify-center items-center'>
-                        <div className="dropdown dropdown-bottom dropdown-end  " >
-                            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                                <span className="sr-only">Open user menu</span>
-                                <img className="w-12 h-12 rounded-full" src="https://i.ibb.co/hDNb1rk/client2.jpg" alt="user photo" />
-                            </button>
-                            <div className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-fit '>
-                                <div className="px-4 py-3">
-                                    <span className="block text-lg text-gray-900 dark:text-white">Bonnie Green</span>
-                                    <span className="block text-lg  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-                                </div>
-                                <ul tabIndex={0} className=" ">
-                                    <li>
-                                        <Link className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
+                                    <li className="text-md  font-semibold  text-slate-600">
+                                        <NavLink
+                                            to="/manage-services"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            My Services
+                                        </NavLink>
                                     </li>
-                                    <li>
-                                        <Link  className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</Link>
+
+
+                                    <li className="text-md  font-semibold text-slate-600">
+                                        <NavLink
+                                            to="/add-services"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            Add Services
+                                        </NavLink>
                                     </li>
-                                    <li>
-                                        <Link  className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</Link>
+                                    <li className="text-md  font-semibold text-slate-600">
+                                        <NavLink
+                                            to="/my-schedules"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            My Schedules
+                                        </NavLink>
                                     </li>
-                                    <li>
-                                        <Link  className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</Link>
-                                    </li>
+
                                 </ul>
-                            </div>
-                        </div>
-
-                        <div>
-                            <button className='btn btn-link no-underline text-lg'>Login</button>
-                        </div>
-
+                            </li>
+                            <li className="text-md  font-semibold text-slate-600">
+                                <NavLink
+                                    to="/services"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                    }
+                                >
+                                    Services
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
-
+                    <a className="btn btn-ghost normal-case text-xl">Grow Barter</a>
                 </div>
-                <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-                    <ul className="flex ">
-                        {navLinks}
+
+
+
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal text-center px-1">
+                        <li className="text-md lg:text-xl font-semibold text-slate-600">
+                            <NavLink
+                                to="/"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                }
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+
+                        <li className="text-md lg:text-xl font-semibold text-slate-600">
+                            <NavLink
+                                to="/services"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                }
+                            >
+                                Services
+                            </NavLink>
+                        </li>
+                        <li tabIndex={0}>
+                            <details>
+                                <summary>
+                                    <li className="text-md lg:text-xl font-semibold text-slate-600">Dashboard</li>
+
+                                </summary>
+                                <ul className=" border bg-green-100 menu dropdown-content bg z-[1]  p-2 shadow rounded-box min-w-max">
+
+                                    <li className=" text-md lg:text-xl font-semibold  text-slate-600">
+                                        <NavLink
+                                            to="/manage-services"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            My Services
+                                        </NavLink>
+                                    </li>
+
+
+                                    <li className="text-md lg:text-xl font-semibold text-slate-600">
+                                        <NavLink
+                                            to="/add-services"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            Add Services
+                                        </NavLink>
+                                    </li>
+                                    <li className="text-md lg:text-xl font-semibold text-slate-600">
+                                        <NavLink
+                                            to="/my-schedules"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "   text-green-700 font-bold" : ""
+                                            }
+                                        >
+                                            My Schedules
+                                        </NavLink>
+                                    </li>
+
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
+                <div className="navbar-end flex justify-end items-center gap-3">
+                    <div className="flex-shrink-0 hidden  group lg:block">
+                        <div className="flex items-center">
+                            <img className="inline-block flex-shrink-0 h-[3.875rem] w-[3.875rem] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
+                            <div className="ml-3">
+                                <h3 className="font-semibold text-gray-800 dark:text-white">Maria Wanner</h3>
+                                <p className="text-sm font-medium text-gray-400">maria@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="dropdown lg:hidden dropdown-end">
+                        <label tabIndex={0} className="">
+                            <img className="inline-block flex-shrink-0 h-[3.875rem] w-[3.875rem] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-fit">
+                            <h3 className="font-semibold text-lg text-gray-800 dark:text-white">Maria Wanner</h3>
+                            <p className="text-lg font-medium text-gray-400">maria@gmail.com</p>
+                        </ul>
+                    </div>
+
+
+                    <button className="text-xl  lg:text-2xl font-semibold text-green-700">
+                        <NavLink
+                            to="/login"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "  text-green-700 font-bold" : ""
+                            }
+                        >
+                            Login
+                        </NavLink>
+
+                    </button>
+                </div>
             </div>
-        </nav>
-
-
+        </div>
     );
 };
 
