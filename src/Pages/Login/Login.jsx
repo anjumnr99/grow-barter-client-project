@@ -44,41 +44,10 @@ const Login = () => {
 
     }
     return (
-        <div className=" max-w-4xl mx-auto min-h-[70vh] px-3 mb-5   flex flex-col  justify-center items-center ">
-            {/* <h1 className=" text-5xl text-rose-600 font-bold mb-4">Login now!</h1> */}
-            {/* <div className="card card-body flex-shrink-0 w-full  shadow-2xl bg-base-100">
-                <form onSubmit={handleLoginWithEmailAndPassword} className="">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-base text-slate-600 font-bold">Email</span>
-                        </label>
-                        <input type="email" placeholder="Enter your email" name="email" className="input input-bordered" required />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-base text-slate-600 font-bold">Password</span>
-                        </label>
-                        <input type="password" placeholder="Enter your password" name="password" className="input input-bordered" required />
+        <div className=" max-w-4xl mx-auto min-h-[70vh] px-3 my-5   flex flex-col  justify-center items-center ">
+            
 
-                    </div>
-                    <div className="form-control mt-6">
-                        <button type="submit" className="btn bg-rose-500 hover:bg-rose-700 text-white">Login</button>
-                    </div>
-
-                </form>
-
-                <button onClick={handleGoogleLogin} className="flex items-center justify-center  border-2 p-2 rounded-xl">
-                    <div className="flex gap-2  ">
-                        <FcGoogle className="text-3xl "></FcGoogle>
-                        <p className="font-semibold">Login with google</p>
-                    </div>
-
-                </button>
-                <p className="font-medium text-center text-slate-600">Don't have an account? Please <Link className=" text-rose-700 underline font-bold" to='/register'>Register</Link></p>
-            </div> */}
-
-
-            <div className="w-full bg-green-100 max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
+            <div className="w-full bg-green-100 max-w-md p-4 my-10 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
                 <h2 className="mb-3 text-3xl text-green-700 font-semibold text-center">Login to your account</h2>
                 <p className="text-sm text-center text-green-600 dark:text-gray-400">Dont have account?
                     <Link to='/register' className="focus:underline font-semibold text-green-900 hover:underline"> Sign up here</Link>
@@ -99,7 +68,7 @@ const Login = () => {
                             <div className="space-y-4">
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="block text-sm">Email address</label>
-                                    <input type="email" name="email" id="email" placeholder="wxyz199@example.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700  focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1 border-green-800 dark:bg-gray-900 dark:text-gray-100 
+                                    <input type="email" name="email" id="email" placeholder="wxyz199@example.com" required className="w-full px-3 py-2 border rounded-md dark:border-gray-700  focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1 border-green-800 dark:bg-gray-900 dark:text-gray-100 
                                     focus:dark:border-violet-400" />
                                 </div>
                                 <div className="space-y-2">
@@ -107,7 +76,7 @@ const Login = () => {
                                         <label htmlFor="password" className="text-sm">Password</label>
                                         <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</Link>
                                     </div>
-                                    <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1 border-green-800 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                                    <input type="password" name="password" id="password" placeholder="*****" required className="w-full px-3 py-2 border rounded-md dark:border-gray-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1 border-green-800 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                                 </div>
                             </div>
                             <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md border border-green-800 hover:border-green-500 text-green-600 dark:bg-violet-400 dark:text-gray-900">Sign in</button>

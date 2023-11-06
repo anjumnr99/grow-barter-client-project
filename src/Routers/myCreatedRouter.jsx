@@ -9,6 +9,7 @@ import ManageServices from "../Pages/ManageServices/ManageServices";
 import AllServices from "../Pages/AllServices/AllServices";
 import ServiceDetails from "../Pages/AllServices/ServiceDetails";
 import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 
 const myCreatedRouter = createBrowserRouter([
@@ -55,7 +56,7 @@ const myCreatedRouter = createBrowserRouter([
             },
             {
                 path:'/register',
-                
+                element:<Register></Register>
             }
 
         ]
