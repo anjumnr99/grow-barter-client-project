@@ -8,6 +8,7 @@ import MySchedules from "../Pages/MySchedules/MySchedules";
 import ManageServices from "../Pages/ManageServices/ManageServices";
 import AllServices from "../Pages/AllServices/AllServices";
 import ServiceDetails from "../Pages/AllServices/ServiceDetails";
+import Login from "../Pages/Login/Login";
 
 
 const myCreatedRouter = createBrowserRouter([
@@ -47,6 +48,14 @@ const myCreatedRouter = createBrowserRouter([
                 path:'/all-services/:id',
                 element:<ServiceDetails></ServiceDetails>,
                 loader : ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                
             }
 
         ]
