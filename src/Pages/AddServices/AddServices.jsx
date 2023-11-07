@@ -24,21 +24,9 @@ const AddServices = () => {
         axios.post('http://localhost:5000/services',newService )
         .then(res=>{
             console.log(res.data);
+            // toast.success('The Product added successfully!')
         })
 
-        // fetch('https://girly-project-server-d7qyc15ff-anjus-projects-6a90d7b7.vercel.app/products', {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(newService)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         toast.success('The Product added successfully!')
-               
-        //         console.log(data);
-        //     })
            
            e.target.reset() ;
     }
