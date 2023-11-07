@@ -1,20 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AllServicesCard from "./AllServicesCard";
+import useAllService from "../../Hooks/useAllService";
 
 
 const AllServices = () => {
-
-    const [services, setServices] = useState([]);
+    const services = useAllService();
+    // const [services, setServices] = useState([]);
     const [isMore, setIsMore] = useState(false);
 
-    useEffect(() => {
-        axios.get('http://localhost:5000/services')
-            .then(res => {
-                // console.log(res.data);
-                setServices(res.data)
-            })
-    }, []);
+    // console.log(services);
+
+    // useEffect(() => {
+    //     axios.get('http://localhost:5000/services')
+    //         .then(res => {
+    //             // console.log(res.data);
+    //             setServices(res.data)
+    //         })
+    // }, []);
 
     const handleMore = () => {
         setIsMore(true);
@@ -32,7 +35,7 @@ const AllServices = () => {
                     }
                 </div> : <div>
                     {
-                        services?.slice(0, 6).map(service => <AllServicesCard key={service._id} service={service} ></AllServicesCard>)
+                        services?.slice(0, 6)?.map(service => <AllServicesCard key={service._id} service={service} ></AllServicesCard>)
                     }
 
                 </div>

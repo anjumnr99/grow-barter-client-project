@@ -18,7 +18,7 @@ const ServiceDetails = () => {
         const service_status = "Pending";
         
         
-        const bookedService = {Service_Name,Service_Image,Service_Provider_Email,Service_Price,booking_date,address,service_status,user_email };
+        const bookedService = {Service_Name,Service_Image,Service_Provider_Email,Service_Price,booking_date,address,service_status,user_email,Service_Description };
 
         axios.post('http://localhost:5000/bookings',bookedService)
         .then(res=>{
