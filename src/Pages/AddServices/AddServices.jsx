@@ -14,20 +14,23 @@ const AddServices = () => {
         const Service_Image = e.target.Service_Image.value;
         const Service_Description = e.target.Service_Description.value;
         const Service_Price = e.target.Service_Price.value;
+        const Service_Area = e.target.Service_Area.value;
         const Service_Provider_Name = e.target.Service_Provider_Name.value;
         const  Service_Provider_Email = e.target.Service_Provider_Email.value;
         const Service_Provider_Image = user.photoURL;
-        const newService = { Service_Name, Service_Image, Service_Description,  Service_Price,Service_Provider_Name, Service_Provider_Email,Service_Provider_Image };
+
+        const newService = { Service_Name, Service_Image, Service_Description,  Service_Price,Service_Provider_Name, Service_Provider_Email,Service_Provider_Image,Service_Area };
 
         console.log(newService);
 
         axios.post('http://localhost:5000/services',newService )
         .then(res=>{
             console.log(res.data);
-            // toast.success('The Product added successfully!')
+            if(res.data.acknowledged){
+                toast.success('The Product added successfully!')
+            } 
         })
-
-           
+  
            e.target.reset() ;
     }
     return (
