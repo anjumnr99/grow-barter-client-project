@@ -1,9 +1,12 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const ServiceDetails = () => {
     const service = useLoaderData();
+    const {user} = useContext(AuthContext);
     const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
 
     const handlePurchase = (e) => {
@@ -11,7 +14,7 @@ const ServiceDetails = () => {
         console.log('Booked the service');
         const booking_date = e.target.date.value;
         const address = e.target.address.value;
-        const user_email = e.target.email.value;
+        const user_email = user.email;
         const service_status = "Pending";
         
         
@@ -27,13 +30,13 @@ const ServiceDetails = () => {
     return (
         <div>
             <div>
-                <div className=" max-w-full mx-auto my-4 border-b-2 border-b-neutral p-8 sm:flex sm:space-x-6 dark:dark:bg-gray-900 dark:dark:text-gray-100">
-                    <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+                <div className=" max-w-full flex gap-2  mx-auto my-4 border-b-2 border-b-neutral lg:sm:p-8 p-6 sm:flex sm:space-x-6 dark:dark:bg-gray-900 dark:dark:text-gray-100">
+                    <div className="flex-shrink-0 w-28 h-28 mb-6 lg:h-32 lg:w-32  sm:h-32 sm:w-32 sm:mb-0">
                         <img src={Service_Provider_Image} alt="" className="object-cover object-center w-full h-full rounded dark:dark:bg-gray-500" />
                     </div>
-                    <div className="flex flex-col space-y-4">
+                    <div className="flex flex-col  sm:space-y-4">
                         <div>
-                            <h2 className="text-2xl font-semibold">{Service_Provider_Name}</h2>
+                            <h2 className=" lg:sm:text-2xl font-semibold">{Service_Provider_Name}</h2>
                             <span className="text-sm dark:dark:text-gray-400">{Service_Area}</span>
                         </div>
                         <div className="space-y-1">
@@ -115,7 +118,7 @@ const ServiceDetails = () => {
                                                                         <div className="col-span-full ">
                                                                             <label htmlFor="userEmail" className="text-sm">User Email</label>
 
-                                                                            <input type="email" name="email" id="email" placeholder="enter your email" className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <input type="email" name="email" id="email" defaultValue={user.email} readOnly  className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
 
                                                                             {/* <input id="email"
                                                                             type="email" name="email" 

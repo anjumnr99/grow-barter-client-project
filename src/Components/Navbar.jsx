@@ -1,6 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useContext } from "react";
+import { IoIosPerson } from 'react-icons/io';
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result);
+                toast.success('Logout Successfully!')
+
+                navigate('/login')
+            })
+            .catch(err => {
+                toast.error(err.message)
+                console.log(err)
+            })
+    }
+
     return (
         <div className="bg-transparent px-4 py-3">
             <div className="navbar ">
@@ -146,40 +167,77 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="navbar-end flex justify-end items-center gap-3">
-                    <div className="flex-shrink-0 hidden  group lg:block">
-                        <div className="flex items-center">
-                            <img className="inline-block flex-shrink-0 h-[3.875rem] w-[3.875rem] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
-                            <div className="ml-3">
-                                <h3 className="font-semibold text-gray-800 dark:text-white">Maria Wanner</h3>
-                                <p className="text-sm font-medium text-gray-400">maria@gmail.com</p>
+                <div className="navbar-end flex ">
+
+                    {
+                        user?.email ? <div>
+
+                            <div className="flex-shrink-0 hidden lg:flex gap-1  group ">
+                                <div className="flex  items-center">
+                                    <img className="inline-block flex-shrink-0 h-[3.875rem] w-[3.875rem] rounded-full" src={user.photoURL} alt="Image Description" />
+                                    <div className="ml-1">
+                                        <h3 className="font-semibold text-gray-800 dark:text-white">{user.displayName}</h3>
+                                        <p className="text-sm font-medium text-gray-400">{user.email}</p>
+                                    </div>
+                                </div>
+                                <button onClick={handleLogOut} className="text-xl ml-3  font-semibold text-green-700">
+                                    <NavLink
+                                        to="/login"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "  text-green-700 font-bold" : ""
+                                        }
+                                    >
+                                        Logout
+                                    </NavLink>
+
+                                </button>
+                             
                             </div>
-                        </div>
-                    </div>
+                            <div className="dropdown lg:hidden dropdown-end ">
+                                <label tabIndex={0} className="">
+                                    <img className="inline-block flex-shrink-0 h-12 w-12 rounded-full" src={user.photoURL} alt="Image Description" />
+                                </label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-fit">
+                                    <h3 className="font-semibold text-lg text-gray-800 dark:text-white">{user.displayName}</h3>
+                                    <p className="text-lg font-medium text-gray-400">{user.email}</p>
+                                </ul>
+                            </div>
+                            <button onClick={handleLogOut} className="text-xl ml-3 lg:text-2xl lg:hidden  font-semibold text-green-700">
+                                    <NavLink
+                                        to="/login"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "  text-green-700 font-bold" : ""
+                                        }
+                                    >
+                                        Logout
+                                    </NavLink>
+
+                                </button>
 
 
-                    <div className="dropdown lg:hidden dropdown-end">
-                        <label tabIndex={0} className="">
-                            <img className="inline-block flex-shrink-0 h-[3.875rem] w-[3.875rem] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
-                        </label>
-                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-fit">
-                            <h3 className="font-semibold text-lg text-gray-800 dark:text-white">Maria Wanner</h3>
-                            <p className="text-lg font-medium text-gray-400">maria@gmail.com</p>
-                        </ul>
-                    </div>
+                        </div> :
+                            <div className="flex justify-center items-center gap-3">
 
+                                <label tabIndex={0} className="avatar">
+                                    <div className="">
+                                        <IoIosPerson className="text-4xl text-green-600  "></IoIosPerson>
+                                    </div>
+                                </label>
 
-                    <button className="text-xl  lg:text-2xl font-semibold text-green-700">
-                        <NavLink
-                            to="/login"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "  text-green-700 font-bold" : ""
-                            }
-                        >
-                            Login
-                        </NavLink>
+                                <button className="text-lg lg:text-xl font-semibold text-slate-600">
+                                    <NavLink
+                                        to="/login"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "  text-green-500 font-bold" : ""
+                                        }
+                                    >
+                                        Login
+                                    </NavLink>
 
-                    </button>
+                                </button>
+                            </div>
+                    }
+
                 </div>
             </div>
         </div>
