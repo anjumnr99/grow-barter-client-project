@@ -29,19 +29,23 @@ const ManageServices = () => {
     console.log('My Services',myServices);
 
     return (
-        <div className="mt-10 py-10 ">
+        <div className="mt-10 py-10 h-[80vh] ">
             <Helmet>
                 <title>Grow Barter | Manage Services</title>
             </Helmet>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1 ">
+            {
+                myServices.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1 ">
 
                 {
                     myServices?.map(service =>
                         <ServiceCard key={service._id} myServices={myServices} setMyServices={setMyServices} service={service}></ServiceCard>)
                 }
 
+            </div> : <div className="flex items-center justify-center  p-5">
+                <p className="text-2xl font-bold ">No Services available</p>
             </div>
+            }
 
 
 
