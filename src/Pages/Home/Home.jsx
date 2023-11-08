@@ -3,6 +3,7 @@ import Banner from "../../Components/Banner";
 import PopularServices from "./PopulerServices/PopularServices";
 import Experience from "../../Components/Experience";
 import FnQ from "../../Components/FnQ";
+import Offer from "../../Components/Offer";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <PopularServices></PopularServices>
+            <Offer></Offer>
             <Experience></Experience>
             <FnQ></FnQ>
         </div>
