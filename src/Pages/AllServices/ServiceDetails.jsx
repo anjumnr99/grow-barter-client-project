@@ -16,27 +16,27 @@ const ServiceDetails = () => {
 
     const [providerServices, setProviderServices] = useState([]);
 
-    console.log(_id, typeof(_id));
+    console.log(_id, typeof (_id));
     // const email = Service_Provider_Email;
 
     // const url = `http://localhost:5000/provider/services?email=${email}`;
 
     useEffect(() => {
 
-        const findServices = services?.filter(item=>item?.Service_Provider_Email === Service_Provider_Email);
-        if(findServices){
+        const findServices = services?.filter(item => item?.Service_Provider_Email === Service_Provider_Email);
+        if (findServices) {
             const filterService = findServices?.filter(item => item._id !== _id);
-            if(filterService){
+            if (filterService) {
                 setProviderServices(filterService)
             }
-            
+
         }
         // axios.get(url, { withCredentials: true })
         //     .then(res => {
         //         console.log(res.data);
         //         setProviderServices(res.data)
         //     })
-    }, [Service_Provider_Email,services,_id]);
+    }, [Service_Provider_Email, services, _id]);
 
     console.log('My Services', providerServices);
 
@@ -96,7 +96,7 @@ const ServiceDetails = () => {
                 <section className="px-5 py-10 dark:dark:bg-gray-800 dark:dark:text-gray-100">
                     <div className="container grid grid-cols-12 mx-auto gap-5 gap-y-6 ">
 
-                        <div className=" flex col-span-12 bg-center  dark:dark:bg-gray-500 xl:col-span-8 lg:col-span-8 md:col-span-8 min-h-96">
+                        <div className={`flex col-span-12 bg-center  dark:dark:bg-gray-500 xl:lg:md:col-span-8 min-h-96`}>
                             <div className=" p-4  dark:dark:dark:bg-gray-900 dark:dark:dark:text-gray-100">
 
                                 <div className="space-y-4">
@@ -110,9 +110,9 @@ const ServiceDetails = () => {
                                         </a>
                                         <p className="leadi dark:dark:dark:text-gray-400">{Service_Description}</p>
                                         <div className="">
-                                        <p className="text-xl text-left font-semibold">{Service_Area}</p>
+                                            <p className="text-xl text-left font-semibold">{Service_Area}</p>
                                             <p className="text-xl text-left font-semibold">${Service_Price}</p>
-                                            
+
 
                                         </div>
                                         <button type="button" data-hs-overlay="#hs-vertically-centered-scrollable-modal" className="px-6 border-green-400 border-b-4 hover:border-green-500 hover:shadow-green-400 transition-all  shadow-green-300 shadow-inner text-xl font-semibold text-green-700 py-2 border rounded-md w-full">
@@ -166,7 +166,7 @@ const ServiceDetails = () => {
 
                                                                         <div className="col-span-full sm:col-span-3">
                                                                             <label htmlFor="city" className="text-sm">Service Taking Date</label>
-                                                                            <input id="date" type="date" name="date" className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
+                                                                            <input id="date" required type="date" name="date" className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
                                                                         <div className="col-span-full sm:col-span-3">
                                                                             <label htmlFor="state" className="text-sm">Price</label>
@@ -175,7 +175,7 @@ const ServiceDetails = () => {
                                                                         </div>
                                                                         <div className="col-span-full">
                                                                             <label htmlFor="address" className="text-sm">Address</label>
-                                                                            <input name="address" id="address" type="text" placeholder="Enter your address"
+                                                                            <input name="address" required id="address" type="text" placeholder="Enter your address"
                                                                                 className="w-full rounded-md border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
                                                                         </div>
 
@@ -202,20 +202,23 @@ const ServiceDetails = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="py-2 xl:col-span-4 lg:col-span-4 col-span-12 md:col-span-4  ">
-                            <div className="mb-8 pb-3 space-x-5 text-xl font-semibold border-b-2 border-opacity-10 dark:dark:border-violet-400">
-                                Other services of {Service_Provider_Name}
-                            </div>
-                            {
-                                providerServices && <div className="flex flex-col divide-y divide-gray-700">
+                        {
+                            providerServices.length > 0 ?<div className="py-2 xl:col-span-4 w-full lg:col-span-4 col-span-12 md:col-span-4  ">
+                                <div className="mb-8 pb-3 space-x-5 text-xl font-semibold border-b-2 border-opacity-10 dark:dark:border-violet-400">
+                                    Other services of {Service_Provider_Name}
+                                </div>
+
+                                <div className=" border  divide-y divide-gray-700">
                                     {
-                                        providerServices?.map(service =><OtherServices service={service} key={service._id}></OtherServices>)
+                                        providerServices?.map(service => <OtherServices service={service} key={service._id}></OtherServices>)
                                     }
 
                                 </div>
-                            }
 
-                        </div>
+
+                            </div> : ''
+                        }
+
                     </div>
                 </section>
             </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const OtherServices = ({service}) => {
     const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
     return (
-        <Link to={`/all-services/${_id}`} className="flex md:flex-col lg:flex-row px-1 py-4">
+        <Link to={`/all-services/${_id}`} className="flex md:flex-col w-full lg:flex-row px-1 py-4">
             <img alt="" className="flex-shrink-0 object-cover md:w-full lg:w-40 w-40 h-40 mr-4 dark:dark:bg-gray-500" src={Service_Image} />
             <div className="flex flex-col flex-grow">
                 <p className="font-serif hover:underline">{Service_Name}</p>

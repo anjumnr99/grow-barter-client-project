@@ -24,6 +24,8 @@ const MySchedules = () => {
             })
     }, [url]);
 
+    
+
     console.log(bookings);
     
     return (
@@ -37,11 +39,15 @@ const MySchedules = () => {
             </div>
             <div className=" lg:md:sm:px-10  grid grid-cols-6  divide-x divide-gray-700 ">
                 <div className="flex flex-col  col-span-3 px-2 lg:md:sm:px-6 space-y-4   text-green-900">
-                    <MyBookings bookings={bookings}></MyBookings>
+                    {
+                        bookings.length>0 ? <MyBookings bookings={bookings} setBookings={setBookings} ></MyBookings> : <div className="flex items-center justify-center mt-10">
+                            <p className="text-xl ">You have not any bookings</p>
+                        </div>
+                    }
                 </div>
                 <div className="flex flex-col col-span-3  p-2 lg:md:sm:p-6 space-y-4  dark:bg-gray-900 dark:text-gray-100">
 
-                    <PendingWorks></PendingWorks>
+                    <PendingWorks bookings={bookings} setBookings={setBookings}></PendingWorks>
                 </div>
             </div>
         </div>
