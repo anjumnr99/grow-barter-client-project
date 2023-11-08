@@ -26,10 +26,6 @@ const myCreatedRouter = createBrowserRouter([
                 element:<Services></Services>
             },
             {
-                path:'/dashboard',
-                element:<Dashboard></Dashboard>
-            },
-            {
                 path:'/manage-services',
                 element:<ManageServices></ManageServices>
             },

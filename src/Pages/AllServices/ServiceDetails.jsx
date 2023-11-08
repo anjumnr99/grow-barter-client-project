@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const ServiceDetails = () => {
@@ -33,6 +34,9 @@ const ServiceDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Grow Barter | Service Details</title>
+            </Helmet>
             <div>
                 <div className=" max-w-full flex gap-2  mx-auto my-4 border-b-2 border-b-neutral lg:sm:p-8 p-6 sm:flex sm:space-x-6 dark:dark:bg-gray-900 dark:dark:text-gray-100">
                     <div className="flex-shrink-0 w-28 h-28 mb-6 lg:h-32 lg:w-32  sm:h-32 sm:w-32 sm:mb-0">

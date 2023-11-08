@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { googleLogin, loginWithEmailAndPassword, user } = useContext(AuthContext);
@@ -45,7 +46,9 @@ const Login = () => {
     }
     return (
         <div className=" max-w-4xl mx-auto min-h-[70vh] px-3 my-5   flex flex-col  justify-center items-center ">
-            
+            <Helmet>
+                <title>Grow Barter | Login</title>
+            </Helmet>
 
             <div className="w-full bg-green-100 max-w-md p-4 my-10 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
                 <h2 className="mb-3 text-3xl text-green-700 font-semibold text-center">Login to your account</h2>

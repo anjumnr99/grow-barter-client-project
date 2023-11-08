@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { GiAutomaticSas } from "react-icons/gi";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 
 
@@ -46,7 +47,9 @@ const Register = () => {
     };
     return (
         <div className=" max-w-2xl mx-auto min-h-[60vh] px-3 py-3 my-5 flex flex-col  justify-center items-center ">
-           
+           <Helmet>
+                <title>Grow Barter | Register</title>
+            </Helmet>
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-green-100">
             <h2 className="my-3 text-3xl text-green-700 font-semibold text-center">Register New Account</h2>
                 <p className="text-sm text-center text-green-600 dark:text-gray-400">Already have an account? Please

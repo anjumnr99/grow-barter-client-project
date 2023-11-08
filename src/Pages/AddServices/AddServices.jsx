@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 const AddServices = () => {
@@ -35,6 +36,9 @@ const AddServices = () => {
     }
     return (
         <div className=" py-20  ">
+            <Helmet>
+                <title>Grow Barter | Add Services</title>
+            </Helmet>
 
             <form onSubmit={handleAddService} className=" max-w-5xl mx-auto px-10 ">
                 <div className=" z-0 w-full mb-6 group">

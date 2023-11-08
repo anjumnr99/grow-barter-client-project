@@ -5,6 +5,7 @@ import ServiceCard from "./ServiceCard";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 
@@ -29,6 +30,9 @@ const ManageServices = () => {
 
     return (
         <div className="mt-10 py-10 ">
+            <Helmet>
+                <title>Grow Barter | Manage Services</title>
+            </Helmet>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1 ">
 

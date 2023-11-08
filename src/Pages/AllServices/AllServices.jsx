@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AllServicesCard from "./AllServicesCard";
 import useAllService from "../../Hooks/useAllService";
+import { Helmet } from "react-helmet";
 
 
 const AllServices = () => {
@@ -57,6 +58,9 @@ const AllServices = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Grow Barter | All Services</title>
+            </Helmet>
 
             <div className="flex flex-col max-w-5xl py-6 mt-5 px-5 mx-auto ">
                 <h1 className="text-2xl font-semibold mb-2">Search here by Service name</h1>

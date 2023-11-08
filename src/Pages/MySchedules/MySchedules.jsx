@@ -4,6 +4,7 @@ import PendingWorks from "./PendingWorks";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 
@@ -27,6 +28,9 @@ const MySchedules = () => {
     
     return (
         <div className="my-5">
+             <Helmet>
+                <title>Grow Barter | My Schedules</title>
+            </Helmet>
             <div className="grid  grid-cols-6 lg:md:sm:px-10  lg:md:sm:pt-10">
                 <h2 className="text-2xl p-2 lg:md:sm:p-6 lg:md:sm:px-10 sm:p-10  text-green-900  col-span-3  font-semibold ">My Bookings</h2>
                 <h2 className="text-2xl p-2 lg:md:sm:p-6 lg:md:sm:px-10 sm:p-10  text-green-900  col-span-3  font-semibold">My Pending Works</h2>
