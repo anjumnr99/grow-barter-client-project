@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Banner from "../../Components/Banner";
 import PopularServices from "./PopulerServices/PopularServices";
 import Experience from "../../Components/Experience";
+import FnQ from "../../Components/FnQ";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <PopularServices></PopularServices>
             <Experience></Experience>
+            <FnQ></FnQ>
         </div>
     );
 };
