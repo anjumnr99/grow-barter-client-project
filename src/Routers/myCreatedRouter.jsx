@@ -11,48 +11,59 @@ import ServiceDetails from "../Pages/AllServices/ServiceDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Error from "../Pages/Error/Error";
+
 
 
 const myCreatedRouter = createBrowserRouter([
     {
         path : '/',
         element: <MainLayout></MainLayout>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                errorElement:<Error></Error>
+                
             },
             {
                 path:'/services',
-                element:<Services></Services>
+                element:<AllServices></AllServices>,
+                errorElement:<Error></Error>
             },
             {
                 path:'/manage-services',
                 element:<PrivateRoute>
                     <ManageServices></ManageServices>
-                </PrivateRoute>
+                </PrivateRoute>,
+                errorElement:<Error></Error>
             },
             {
                 path:'/add-services',
                 element:<PrivateRoute>
                     <AddServices></AddServices>
-                    </PrivateRoute>
+                    </PrivateRoute>,
+                    errorElement:<Error></Error>
             },
             {
                 path:'/my-schedules',
                 element:<PrivateRoute>
                     <MySchedules></MySchedules>
-                </PrivateRoute>
+                </PrivateRoute>,
+                errorElement:<Error></Error>
             },
             {
                 path:'/all-services',
-                element:<AllServices></AllServices>
+                element:<AllServices></AllServices>,
+                errorElement:<Error></Error>
             },
             {
                 path:'/all-services/:id',
                 element:<PrivateRoute>
                     <ServiceDetails></ServiceDetails>
                 </PrivateRoute>,
+                errorElement:<Error></Error>,
                 loader : ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
@@ -60,11 +71,13 @@ const myCreatedRouter = createBrowserRouter([
             },
             {
                 path:'/login',
-                element:<Login></Login>
+                element:<Login></Login>,
+                errorElement:<Error></Error>
             },
             {
                 path:'/register',
-                element:<Register></Register>
+                element:<Register></Register>,
+                errorElement:<Error></Error>
             }
 
         ]
