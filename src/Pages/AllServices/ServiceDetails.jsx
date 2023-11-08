@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const ServiceDetails = () => {
@@ -23,6 +24,9 @@ const ServiceDetails = () => {
         axios.post('http://localhost:5000/bookings',bookedService)
         .then(res=>{
             console.log(res.data);
+            if(res.data.acknowledged){
+                toast.success('You Purchase This Service')
+            }
         })
 
     }

@@ -1,9 +1,10 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useContext } from "react";
 import { IoIosPerson } from 'react-icons/io';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import logo from '../assets/logo.svg';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -93,7 +94,11 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Grow Barter</a>
+                    <button className="w-96  px-2">
+                        <img src={logo} className=" h-full w-full"/>
+                    </button>
+                    
+                  
                 </div>
 
 
