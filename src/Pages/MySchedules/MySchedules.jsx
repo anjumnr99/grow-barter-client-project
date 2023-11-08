@@ -14,7 +14,7 @@ const MySchedules = () => {
     const [bookings, setBookings] = useState([]);
 
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings?email=${user?.email}`;
     useEffect(() => {
 
         axios.get(url, { withCredentials: true })
@@ -41,7 +41,7 @@ const MySchedules = () => {
                 <div className="flex flex-col  col-span-3 px-2 lg:md:sm:px-6 space-y-4   text-green-900">
                     {
                         bookings.length>0 ? <MyBookings bookings={bookings} setBookings={setBookings} ></MyBookings> : <div className="flex items-center justify-center mt-10">
-                            <p className="text-xl ">You have not any bookings</p>
+                            <p className="text-2xl ">You have not any bookings</p>
                         </div>
                     }
                 </div>

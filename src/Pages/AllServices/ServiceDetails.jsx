@@ -19,7 +19,7 @@ const ServiceDetails = () => {
     console.log(_id, typeof (_id));
     // const email = Service_Provider_Email;
 
-    // const url = `http://localhost:5000/provider/services?email=${email}`;
+    // const url = `https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/provider/services?email=${email}`;
 
     useEffect(() => {
 
@@ -51,7 +51,7 @@ const ServiceDetails = () => {
 
         const bookedService = { Service_Name, Service_Image, Service_Provider_Email, Service_Price, booking_date, address, service_status, user_email, Service_Description };
 
-        axios.post('http://localhost:5000/bookings', bookedService)
+        axios.post('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings', bookedService, { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 if (res.data.acknowledged) {

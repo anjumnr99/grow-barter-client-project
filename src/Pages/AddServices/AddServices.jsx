@@ -24,7 +24,7 @@ const AddServices = () => {
 
         console.log(newService);
 
-        axios.post('http://localhost:5000/services',newService )
+        axios.post('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services',newService,{ withCredentials: true } )
         .then(res=>{
             console.log(res.data);
             if(res.data.acknowledged){

@@ -39,7 +39,7 @@ const AuthProvider = ({children}) => {
             if (currentUser) {
                 const loggedUser = { email: currentUser.email };
 
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })

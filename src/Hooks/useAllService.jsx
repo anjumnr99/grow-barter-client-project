@@ -7,7 +7,7 @@ const useAllService = () => {
    
 
     useEffect(() => {
-        axios.get('http://localhost:5000/services')
+        axios.get('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services',{ withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 setServices(res.data)

@@ -30,7 +30,7 @@ const ServiceCard = ({ service, myServices, setMyServices }) => {
         const updatedService = { Service_Name, Service_Image, Service_Description,  Service_Price,Service_Provider_Name, Service_Provider_Email,Service_Provider_Image,Service_Area };
 
         
-        axios.put(`http://localhost:5000/my-services/update/${_id}`,updatedService )
+        axios.put(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/my-services/update/${_id}`,updatedService ,{ withCredentials: true })
         .then(res=>{
             console.log(res.data);
             if(res.data.acknowledged){
@@ -52,7 +52,7 @@ const ServiceCard = ({ service, myServices, setMyServices }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/services/${_id}`, {
+                fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

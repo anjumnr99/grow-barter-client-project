@@ -8,7 +8,7 @@ const useMyServices = () => {
 
     const [myServices, setMyServices] = useState([]);
 
-    const url = `http://localhost:5000/pending-work?email=${user?.email}`;
+    const url = `https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/pending-work?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(res => {

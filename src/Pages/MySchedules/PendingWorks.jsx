@@ -6,12 +6,12 @@ import toast from "react-hot-toast";
 
 
 
-const PendingWorks = ({bookings,setBookings}) => {
+const PendingWorks = ({ bookings, setBookings }) => {
     const { user } = useContext(AuthContext);
 
     const [pendingWorks, setPendingWorks] = useState([]);
 
-    const url = `http://localhost:5000/pending-work?email=${user?.email}`;
+    const url = `https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/pending-work?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(res => {
@@ -22,29 +22,29 @@ const PendingWorks = ({bookings,setBookings}) => {
 
     console.log(bookings);
 
-   
 
-    const handleStatus = (id,status_value) => {
+
+    const handleStatus = (id, status_value) => {
 
         console.log(id, status_value);
 
         // const filter = pendingWorks?.filter(item=>item._id === id);
         // console.log('Filterd',filter);
 
-        // axios.patch(`http://localhost:5000/bookings/${id}`,{service_status : status_value})
+        // axios.patch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings/${id}`,{service_status : status_value})
         // .then(res=>{
         //     console.log(res.data);
-            
+
         // })
 
 
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({service_status : status_value})
-        })
+            body: JSON.stringify({ service_status: status_value })
+        }, { credentials: "include" })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -55,7 +55,7 @@ const PendingWorks = ({bookings,setBookings}) => {
                     updated.service_status = status_value;
                     const newBookings = [updated, ...remaining];
                     // setPendingWorks(newBookings);
-                    setBookings(newBookings )
+                    setBookings(newBookings)
                 }
             })
     }
@@ -63,15 +63,19 @@ const PendingWorks = ({bookings,setBookings}) => {
     console.log(pendingWorks);
     return (
         <div>
-            <ul className="flex flex-col divide-y divide-gray-700">
-                {
-                    pendingWorks?.map(list => <PendingList 
-                        key={list._id} 
-                        
-                        handleStatus={handleStatus} 
-                        list={list} ></PendingList>)
-                }
-            </ul>
+            {
+                pendingWorks.length > 0 ? <ul className="flex flex-col divide-y divide-gray-700">
+                    {
+                        pendingWorks?.map(list => <PendingList
+                            key={list._id}
+
+                            handleStatus={handleStatus}
+                            list={list} ></PendingList>)
+                    }
+                </ul> : <div className="flex items-center justify-center mt-10">
+                            <p className="text-2xl ">You have no available pending works</p>
+                        </div>
+            }
         </div>
     );
 };

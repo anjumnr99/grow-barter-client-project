@@ -16,9 +16,9 @@ const MyBookings = ({ bookings, setBookings }) => {
             confirmButtonText: 'Yes, remove it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/bookings/${id}`, {
+                fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings/${id}`, {
                     method: 'DELETE'
-                })
+                }, { credentials : "include" })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
