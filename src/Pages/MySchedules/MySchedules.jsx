@@ -29,7 +29,7 @@ const MySchedules = () => {
     console.log(bookings);
     
     return (
-        <div className="mb-24 mt-10 h-[100vh]">
+        <div className="mb-24 mt-10 min-h-[100vh]">
              <Helmet>
                 <title>Grow Barter | My Schedules</title>
             </Helmet>

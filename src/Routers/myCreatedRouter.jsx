@@ -11,6 +11,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyCreatedError from "../Pages/MyCreatedError/MyCreatedError";
+import UpdateProduct from "../Pages/Update/UpdateProduct";
 
 
 
@@ -78,6 +79,16 @@ const myCreatedRouter = createBrowserRouter([
                 path:'/register',
                 element:<Register></Register>,
                 errorElement : <MyCreatedError></MyCreatedError>
+            },
+            {
+                
+                    path:'/update/:id',
+                    element: <PrivateRoute>
+                        <UpdateProduct></UpdateProduct>
+                    </PrivateRoute>,
+                    // errorElement: <Error></Error>,
+                    loader : ({params}) => fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services/${params.id}`)
+                
             }
 
         ]

@@ -10,7 +10,7 @@ const OtherServices = ({service}) => {
                 <p className="font-serif hover:underline">{Service_Name}</p>
                 <p>{Service_Description?.slice(0,70)}...</p>
                 <p className="mt-auto text-xs dark:dark:text-gray-400">${Service_Price}
-                    <a rel="noopener noreferrer" href="#" className="block dark:dark:text-blue-400 lg:ml-4 lg:inline hover:underline">{Service_Area}</a>
+                    <a rel="noopener noreferrer" className="block dark:dark:text-blue-400 lg:ml-4 lg:inline hover:underline">{Service_Area}</a>
                 </p>
             </div>
         </Link>

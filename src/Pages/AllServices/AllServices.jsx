@@ -33,22 +33,30 @@ const AllServices = () => {
         console.log(inputFieldValue);
         setSearch(inputFieldValue);
 
-
-    }
-
-    useEffect(() => {
-        if (search) {
-            const findService = services.filter(item => item.Service_Name.toUpperCase() === search.toUpperCase());
-            console.log(findService);
-            if (findService) {
-                setSearchService(findService);
-            } else {
-                setNoMatches('No matches data found')
-            }
+        const findService = services.filter(item => item.Service_Name.toUpperCase() === search.toUpperCase());
+        console.log(findService);
+        if (findService) {
+            setSearchService(findService);
+        } else {
+            setNoMatches('No matches data found')
         }
 
 
-    }, [search, services])
+    }
+
+    // useEffect(() => {
+    //     if (search) {
+    //         const findService = services.filter(item => item.Service_Name.toUpperCase() === search.toUpperCase());
+    //         console.log(findService);
+    //         if (findService) {
+    //             setSearchService(findService);
+    //         } else {
+    //             setNoMatches('No matches data found')
+    //         }
+    //     }
+
+
+    // }, [search, services])
 
 
     const yes = noMatches === '';
@@ -57,7 +65,7 @@ const AllServices = () => {
     console.log(services);
 
     return (
-        <div>
+        <div className=" min-h-[80vh]">
             <Helmet>
                 <title>Grow Barter | All Services</title>
             </Helmet>
@@ -83,15 +91,10 @@ const AllServices = () => {
                         <input type="search" id="input-field" name="Search" placeholder="Search..." className=" w-full py-2 pl-10 text-sm rounded-md  focus:outline-none dark:dark:bg-gray-800 dark:dark:text-gray-100 focus:border-green-600 focus:dark:dark:bg-gray-900 focus:ring-0 focus:dark:dark:border-violet-400" />
                     </div>
                 </fieldset>
+
             </div>
 
-
-            {/* <div className="">
-                <div className="input-group flex justify-center items-center">
-                    <input id="input-field" type="text" placeholder="Search…" className="input  input-bordered border-r-0 w-full  max-w-md" />
-                    <button  className="btn border border-green-700 rounded-l-none text-white bg-green-500 ">Search</button>
-                </div>
-            </div> */}
+          
 
             <div>
 
@@ -131,21 +134,33 @@ const AllServices = () => {
                 }
 
             </div>
+
+
+            {/* <div className="">
+                <div className="input-group flex justify-center items-center">
+                    <input id="input-field" type="text" placeholder="Search…" className="input  input-bordered border-r-0 w-full  max-w-md" />
+                    <button  className="btn border border-green-700 rounded-l-none text-white bg-green-500 ">Search</button>
+                </div>
+            </div> */}
+
+
             {
-                !isMore ? services.length > 6 && <div className="flex justify-center items-center mt-5">
+                !isMore ? <div className="flex justify-center items-center mt-5">
                     <button onClick={handleMore} type="button" className={`py-3 px-4 ${isMore && 'hidden'} inline-flex justify-center items-center gap-2 rounded-md bg-white/[.1] border border-transparent font-bold text-green-500 hover:text-green-600 hover:bg-green-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-white focus:ring-offset-2 transition-all text-lg dark:focus:ring-offset-gray-800`}>
                         More...
                     </button>
                 </div> : ''
-                // !isMore ? <div>
+
+
+                // <div>
                 //     {
-                //         services.length > 6 && <div className="flex justify-center items-center mt-5">
+                //         services.length > 6 && isMore ? <div className="flex justify-center items-center mt-5">
                 //             <button onClick={handleMore} type="button" className={`py-3 px-4 ${isMore && 'hidden'} inline-flex justify-center items-center gap-2 rounded-md bg-white/[.1] border border-transparent font-bold text-green-500 hover:text-green-600 hover:bg-green-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-white focus:ring-offset-2 transition-all text-lg dark:focus:ring-offset-gray-800`}>
                 //                 More...
                 //             </button>
-                //         </div>
+                //         </div> : ''
                 //     }
-                // </div> : ''
+                // </div>
             }
 
 

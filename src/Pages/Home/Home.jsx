@@ -8,6 +8,7 @@ import Offer from "../../Components/Offer";
 
 
 
+
 const Home = () => {
     return (
         <div>
@@ -18,6 +19,7 @@ const Home = () => {
             <PopularServices></PopularServices>
             <Offer></Offer>
             <Experience></Experience>
+         
             <FnQ></FnQ>
         </div>
     );

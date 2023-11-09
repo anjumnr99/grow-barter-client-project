@@ -29,7 +29,7 @@ const ManageServices = () => {
     console.log('My Services',myServices);
 
     return (
-        <div className="mt-10 py-10 h-[80vh] ">
+        <div className="mt-10 py-10 min-h-[100vh] ">
             <Helmet>
                 <title>Grow Barter | Manage Services</title>
             </Helmet>

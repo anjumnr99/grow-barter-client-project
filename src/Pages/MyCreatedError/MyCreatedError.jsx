@@ -13,9 +13,9 @@ const MyCreatedError = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md space-y-4">
-                            <h1 className="  text-2xl text-black lg:text-7xl font-bold">404 </h1>
-                            <h1 className="  text-2xl text-black lg:text-5xl font-bold">Page Not Found</h1>
-                            <p className="text-xl text-black">The page you are looking for does not exists</p>
+                            <h1 className="  text-2xl text-base-200 lg:text-7xl font-bold">404 </h1>
+                            <h1 className="  text-2xl text-white lg:text-5xl font-bold">Page Not Found</h1>
+                            <p className="text-xl text-white">The page you are looking for does not exists</p>
 
                             <button>
                                 <Link className=" btn border-none font-semibold text-white hover:bg-orange-700 bg-orange-500" to='/'>home page</Link>
