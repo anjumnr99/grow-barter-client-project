@@ -1,19 +1,19 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import useAllService from "../../Hooks/useAllService";
 import OtherServices from "./OtherServices";
-
+// import { Modal } from 'flowbite';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
     const services = useAllService();
     const { user } = useContext(AuthContext);
     const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
-
+    // const [isShow, setIsShow] = useState(true);
     const [providerServices, setProviderServices] = useState([]);
 
     console.log(_id, typeof (_id));
@@ -59,7 +59,21 @@ const ServiceDetails = () => {
                 }
             })
 
-    }
+    };
+
+    // const handleModal = () => {
+    //     // set the modal menu element
+    //     const modalId = document.getElementById('bookingModal');
+
+    //     const modal = new Modal(modalId);
+
+
+    //     modal.show();
+
+
+    // }
+
+
 
     return (
         <div>
@@ -115,12 +129,18 @@ const ServiceDetails = () => {
 
 
                                         </div>
-                                        <button type="button" data-hs-overlay="#hs-vertically-centered-scrollable-modal" className="px-6 border-green-400 border-b-4 hover:border-green-500 hover:shadow-green-400 transition-all  shadow-green-300 shadow-inner text-xl font-semibold text-green-700 py-2 border rounded-md w-full">
-                                            Book Now
-                                        </button>
+
+                                        <Link to={`/bookings/${_id}`}>
+                                            <button
+                                                // onClick={()=>handleModal(setIsShow(!isShow))}
+                                                type="button" className="px-6 border-green-400 border-b-4 hover:border-green-500 hover:shadow-green-400 transition-all  shadow-green-300 shadow-inner text-xl font-semibold text-green-700 py-2 border rounded-md w-full">
+                                                Book Now
+                                            </button>
+                                        </Link>
+
 
                                         {/* Modal */}
-                                        <div id="hs-vertically-centered-scrollable-modal" className="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
+                                        {/* <div id="bookingModal" className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                             <div className="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center">
                                                 <div className="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
                                                     <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
@@ -159,9 +179,7 @@ const ServiceDetails = () => {
 
                                                                             <input type="email" name="email" id="email" defaultValue={user.email} readOnly className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" />
 
-                                                                            {/* <input id="email"
-                                                                            type="email" name="email" 
-                                                                            placeholder="Enter your email" className="w-full rounded-md  border-green-700 focus:outline-none focus:border-green-500 focus:ring-green-500 focus:ring-1" /> */}
+                                                                         
                                                                         </div>
 
                                                                         <div className="col-span-full sm:col-span-3">
@@ -196,14 +214,14 @@ const ServiceDetails = () => {
 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {
-                            providerServices.length > 0 ?<div className="py-2 xl:col-span-4 w-full lg:col-span-4 col-span-12 md:col-span-4  ">
+                            providerServices.length > 0 ? <div className="py-2 xl:col-span-4 w-full lg:col-span-4 col-span-12 md:col-span-4  ">
                                 <div className="mb-8 pb-3 space-x-5 text-xl font-semibold border-b-2 border-opacity-10 dark:dark:border-violet-400">
                                     Other services of {Service_Provider_Name}
                                 </div>

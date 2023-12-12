@@ -12,6 +12,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyCreatedError from "../Pages/MyCreatedError/MyCreatedError";
 import UpdateProduct from "../Pages/Update/UpdateProduct";
+import BookingHandle from "../Pages/AllServices/BookingHandle";
 
 
 
@@ -68,6 +69,11 @@ const myCreatedRouter = createBrowserRouter([
                     <ServiceDetails></ServiceDetails>
                 </PrivateRoute>,
                 errorElement : <MyCreatedError></MyCreatedError>,
+                loader : ({params}) => fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services/${params.id}`)
+            },
+            {
+                path:'/bookings/:id',
+                element: <BookingHandle></BookingHandle>,
                 loader : ({params}) => fetch(`https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/services/${params.id}`)
             },
             {
