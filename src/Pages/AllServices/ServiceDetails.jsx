@@ -1,8 +1,8 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+// import axios from "axios";
+import {  useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
-import toast from "react-hot-toast";
+// import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import useAllService from "../../Hooks/useAllService";
 import OtherServices from "./OtherServices";
@@ -11,7 +11,7 @@ import OtherServices from "./OtherServices";
 const ServiceDetails = () => {
     const service = useLoaderData();
     const services = useAllService();
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
     const { _id, Service_Name, Service_Area, Service_Description, Service_Image, Service_Price, Service_Provider_Email, Service_Provider_Image, Service_Provider_Name } = service || {};
     // const [isShow, setIsShow] = useState(true);
     const [providerServices, setProviderServices] = useState([]);
@@ -40,26 +40,27 @@ const ServiceDetails = () => {
 
     console.log('My Services', providerServices);
 
-    const handlePurchase = (e) => {
-        e.preventDefault();
-        console.log('Booked the service');
-        const booking_date = e.target.date.value;
-        const address = e.target.address.value;
-        const user_email = user.email;
-        const service_status = "Pending";
+
+    // const handlePurchase = (e) => {
+    //     e.preventDefault();
+    //     console.log('Booked the service');
+    //     const booking_date = e.target.date.value;
+    //     const address = e.target.address.value;
+    //     const user_email = user.email;
+    //     const service_status = "Pending";
 
 
-        const bookedService = { Service_Name, Service_Image, Service_Provider_Email, Service_Price, booking_date, address, service_status, user_email, Service_Description };
+    //     const bookedService = { Service_Name, Service_Image, Service_Provider_Email, Service_Price, booking_date, address, service_status, user_email, Service_Description };
 
-        axios.post('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings', bookedService, { withCredentials: true })
-            .then(res => {
-                console.log(res.data);
-                if (res.data.acknowledged) {
-                    toast.success('You Purchase This Service')
-                }
-            })
+    //     axios.post('https://grow-barter-server-project-gg7p782kd-anjus-projects-6a90d7b7.vercel.app/bookings', bookedService, { withCredentials: true })
+    //         .then(res => {
+    //             console.log(res.data);
+    //             if (res.data.acknowledged) {
+    //                 toast.success('You Purchase This Service')
+    //             }
+    //         })
 
-    };
+    // };
 
     // const handleModal = () => {
     //     // set the modal menu element
